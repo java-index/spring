@@ -2,6 +2,7 @@ package biz.ecology.spring;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class MessageSupportFactory {
@@ -18,10 +19,9 @@ public class MessageSupportFactory {
 
     public MessageSupportFactory() {
         props = new Properties();
-        File currentDir = new File(".");
+        InputStream fis = Properties.class.getResourceAsStream("/msf.properties");
         try {
-            String sFilePath = "./src/main/resources/msf.properties";
-            props.load(new FileInputStream(sFilePath));
+            props.load(fis);
             String rendererClass = props.getProperty("render.class");
             String providerClass = props.getProperty("provider.class");
 

@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class HelloWorldSpringID {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("./META-INF/spring/app-context.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classPath: app-context.xml");
         MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
         mr.render();
     }
