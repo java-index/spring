@@ -11,7 +11,6 @@ public class XmlConfigWithBeanFactory {
 	public static void main(String[] args) {
 		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
-//		reader.loadBeanDefinitions(new ClassPathResource("spring/ex1.xml"));
 		reader.loadBeanDefinitions("spring/app-config.xml");
 
 		Oracle oracle = (Oracle) factory.getBean("oracle");

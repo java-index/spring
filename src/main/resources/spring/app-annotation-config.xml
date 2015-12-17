@@ -8,10 +8,4 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="biz.ecology.spring.annotation"/>
-
-    <bean id="provider" class="biz.ecology.spring.HelloWorldMessageProvider"/>
-    <bean id="renderer" class="biz.ecology.spring.StandardOutMessageRenderer"
-          p:messageProvider-ref="provider"/>
-    <bean id="oracle" name="wiseworm" class="biz.ecology.spring.ex1.RomaOracle"/>
-
 </beans>
