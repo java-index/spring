@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="initmaincollection" name="main" class="biz.ecology.spring.collections.InitMainCollection">
+        <property name="map">
+            <map>
+                <entry key="oneKey">
+                    <value>Hello one!!</value>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="firstName">Roman</prop>
+                <prop key="secondName">Piatyntsev</prop>
+            </props>
+        </property>
+        <property name="list">
+            <list>
+                <value>List one</value>
+                <value>List two</value>
+                <value>List three</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>Set one</value>
+                <value>Set two</value>
+            </set>
+        </property>
+    </bean>
+
+</beans>

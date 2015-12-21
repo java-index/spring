@@ -1,6 +1,11 @@
 package biz.ecology.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("renderer")
 public class StandardOutMessageRenderer implements MessageRenderer {
+
     private MessageProvider messageProvider;
 
     public void render() {
@@ -12,7 +17,13 @@ public class StandardOutMessageRenderer implements MessageRenderer {
         System.out.println(messageProvider.getMessage());
     }
 
-    public void setMessageProvider(MessageProvider provider) {
-        this.messageProvider = provider;
+//    @Autowired
+//    public void setMessageProvider(MessageProvider provider) {
+//        this.messageProvider = provider;
+//    }
+
+    @Autowired
+    public void setMessageProvider(MessageProvider configurable_provider) {
+        this.messageProvider = configurable_provider;
     }
 }

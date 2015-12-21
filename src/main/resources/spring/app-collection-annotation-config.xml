@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:component-scan base-package="biz.ecology.spring.collections"/>
+    <util:list id="list" list-class="java.util.ArrayList">
+        <value>one</value>
+        <value>two</value>
+        <value>three</value>
+    </util:list>
+    <util:map id="map" map-class="java.util.HashMap">
+        <entry key="oneKey">
+            <value>one value</value>
+        </entry>
+        <entry key="twoKey">
+            <value>two value</value>
+        </entry>
+    </util:map>
+    <util:set id="set" set-class="java.util.HashSet">
+        <value>one set</value>
+        <value>two set</value>
+    </util:set>
+    <util:properties id="props">
+        <prop key="one">one props</prop>
+        <prop key="two">two props</prop>
+    </util:properties>
+</beans>

@@ -1,5 +1,8 @@
 package biz.ecology.spring.annotation;
 
+import org.springframework.stereotype.Service;
+
+@Service("oracle")
 public class RomaOracle implements Oracle {
 
 	public String defineMeaningOfLife() {

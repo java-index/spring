@@ -7,13 +7,17 @@ public class AnnotationConfigWithBeanFactory {
 
 	public static void main(String[] args) {
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-		ctx.load("spring/app-annotation-config");
+		ctx.load("spring/app-annotation-config.xml");
 		ctx.refresh();
 
 		Oracle oracle = ctx.getBean("oracle", Oracle.class);
 		System.out.println(oracle.defineMeaningOfLife());
 
-		MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
-		mr.render();
+        MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
+        mr.render();
+
+		ConfusionConstructor cc = ctx.getBean("confusion", ConfusionConstructor.class);
 	}
 }
+
+//0352-522022 22 тис.
