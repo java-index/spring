@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="biz.ecology.spring.replacement"/>
+
+    <bean id="methodReplacer" class="biz.ecology.spring.replacement.FormatMessageReplacer"/>
+    <bean id="replacementTarget" class="biz.ecology.spring.replacement.ReplacementTarget"
+          init-method="init"
+          destroy-method="destroyXml" >
+        <replaced-method name="formatMessage" replacer="methodReplacer">
+            <arg-type>String</arg-type>
+        </replaced-method>
+    </bean>
+    <bean id="standardTarget" name="alias-name" class="biz.ecology.spring.replacement.ReplacementTarget"/>
+    <alias name="alias-name" alias="target"/>
+</beans>

@@ -3,7 +3,6 @@ package biz.ecology.spring.collections;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +11,7 @@ import java.util.Properties;
 
 @Component("initmaincollection")
 public class InitMainCollection {
+
     @Resource(name="map")
     private Map<String, String> map;
 
